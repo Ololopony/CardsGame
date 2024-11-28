@@ -7,13 +7,13 @@ using UnityEngine.Timeline;
 public class UIStateMashine : MonoBehaviour
 {
     [SerializeField]
-    public MainMenu mainMenu;
+    public GameObject mainMenu;
     [SerializeField]
-    public Settings settings;
+    public GameObject settings;
     [SerializeField]
-    public GameMenu gameMenu;
+    public GameObject gameMenu;
     [SerializeField]
-    public GameUi gameUI;
+    public GameObject gameUI;
 
     private void Awake()
     {
@@ -22,33 +22,33 @@ public class UIStateMashine : MonoBehaviour
 
     public void ChangeCurrentStateToMainMenu()
     {
-        mainMenu.EnterState();
-        settings.ExitState();
-        gameMenu.ExitState();
-        gameUI.ExitState();
+        mainMenu.SetActive(true);
+        settings.SetActive(false);
+        gameMenu.SetActive(false);
+        gameUI.SetActive(false);
     }
 
     public void ChangeCurrentStateToSettings()
     {
-        mainMenu.ExitState();
-        settings.EnterState();
-        gameMenu.ExitState();
-        gameUI.ExitState();
+        mainMenu.SetActive(false);
+        settings.SetActive(true);
+        gameMenu.SetActive(false);
+        gameUI.SetActive(false);
     }
 
     public void ChangeCurrentStateToGameMenu()
     {
-        mainMenu.ExitState();
-        settings.ExitState();
-        gameMenu.EnterState();
-        gameUI.ExitState();
+        mainMenu.SetActive(false);
+        settings.SetActive(false);
+        gameMenu.SetActive(true);
+        gameUI.SetActive(false);
     }
 
     public void ChangeCurrentStateToGameUI()
     {
-        mainMenu.ExitState();
-        settings.ExitState();
-        gameMenu.ExitState();
-        gameUI.EnterState();
+        mainMenu.SetActive(false);
+        settings.SetActive(false);
+        gameMenu.SetActive(false);
+        gameUI.SetActive(true);
     }
 }
