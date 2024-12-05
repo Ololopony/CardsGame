@@ -4,3 +4,4 @@ Logs
 UserSettings
 *.sln
 Temp
+Assembly-CSharp.csproj

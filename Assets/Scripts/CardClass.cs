@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class CardClass
+[CreateAssetMenu(fileName = "Card", menuName = "ScriptableObjects/CardObject")]
+public class CardClass: ScriptableObject
 {
-    public string Suit { get; set; }
-    public string Value { get; set; }
-    public bool IsStrongest { get; set; }
+    public string suit;
+    public string value;
+    public Sprite sprite;
 }
